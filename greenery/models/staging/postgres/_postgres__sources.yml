@@ -1,0 +1,48 @@
+version: 2
+
+sources:
+
+  - name: postgres # name of the source
+    schema: public # the data's schema
+    database: raw # database's name
+
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+    
+    freshness:
+      warn_after: {count: 24, period: hour}
+      error_after: {count: 48, period: hour}
+
+    tables: # tables in the database we're pulling info from
+      - name: addresses
+        loaded_at_field: created_at
+        description: >
+          Contains information about each unique address.
+      - name: events
+        loaded_at_field: created_at
+        description: >
+          Contains information about each unique event.
+      - name: order_items
+        loaded_at_field: created_at
+        description: >
+          Contains information about the products in an order.
+      - name: orders
+        loaded_at_field: created_at
+        description: >
+          Contains information about each unique order. 
+      - name: products
+        loaded_at_field: created_at
+        description: >
+          Contains information about each unique product.
+      - name: promos
+        loaded_at_field: created_at
+        description: >
+          Contains information about each unique promotion.
+      - name: users
+        loaded_at_field: created_at
+        description: >
+          Contains information about each unique user.
+      
+      

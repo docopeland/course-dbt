@@ -1,0 +1,18 @@
+version: 2
+
+# adding staging tables, tests to be added later
+models:
+  - name: stg_addresses
+    description: Information on addresses
+  - name: stg_events
+    description: Information on events
+  - name: stg_order_items
+    description: Information on order items
+  - name: stg_orders
+    description: Information on orders
+  - name: stg_products
+    description: Information on productions
+  - name: stg_promos
+    description: Information on promotions
+  - name: stg_users
+    description: Information on users
