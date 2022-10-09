@@ -33,7 +33,19 @@ FROM orders_per_hour
 ### Prompt
 On average, how long does an order take from being placed to being delivered?
 ### Answer
+3.9 days or 93.4 hours
 ### Query
+```
+WITH time_for_delivery AS(
+    SELECT datediff('hour', created_at, delivered_at) as hourly_length,
+        datediff('day', created_at, delivered_at) as daily_length
+    FROM dev_db.dbt_doc22.stg_orders
+)
+
+SELECT avg(daily_length) as avg_delivery_days,
+    avg(hourly_length) as avg_delivery_hours
+FROM time_for_delivery
+```
 
 # Question Four
 ### Prompt
