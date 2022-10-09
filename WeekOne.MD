@@ -27,8 +27,8 @@ On average, how long does an order take from being placed to being delivered?
 ### Prompt
 How many users have only made one purchase? Two purchases? Three+ purchases?
 ### Answer
-One purchase - 25 users
-Two purchases - 28 users
+One purchase - 25 users. 
+Two purchases - 28 users. 
 Three+ purchases - 71 users
 ### Query
 ```
