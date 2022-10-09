@@ -15,7 +15,7 @@ FROM dev_db.dbt_doc22.stg_users
 ### Prompt
 On average, how many orders do we receive per hour?
 ### Answer
-7.5 orders
+7.5 orders per hour
 ### Query
 ```
 WITH orders_per_hour AS(
@@ -51,9 +51,9 @@ FROM time_for_delivery
 ### Prompt
 How many users have only made one purchase? Two purchases? Three+ purchases?
 ### Answer
-One purchase - 25 users.  
-Two purchases - 28 users.  
-Three+ purchases - 71 users.  
+One purchase - 25 users  
+Two purchases - 28 users  
+Three+ purchases - 71 users  
 ### Query
 ```
 WITH user_orders AS (
@@ -77,4 +77,18 @@ GROUP BY num_orders`
 ### Prompt
 On average, how many unique sessions do we have per hour?
 ### Answer
+16.3 sessions per hour
 ### Query
+```
+WITH sessions AS (
+    SELECT
+        COUNT(DISTINCT session_id) as num_sessions,
+        date_trunc('hour', CREATED_AT) as hourly
+    FROM dev_db.dbt_doc22.stg_events
+    GROUP BY hourly
+)
+
+
+SELECT avg(num_sessions)
+FROM sessions
+```
