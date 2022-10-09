@@ -15,7 +15,19 @@ FROM dev_db.dbt_doc22.stg_users
 ### Prompt
 On average, how many orders do we receive per hour?
 ### Answer
+7.5 orders
 ### Query
+```
+WITH orders_per_hour AS(
+    SELECT date_trunc('hour', CREATED_AT) as hourly,
+        COUNT(order_id) AS orders
+    FROM dev_db.dbt_doc22.stg_orders
+    GROUP BY hourly
+)
+
+SELECT AVG(orders) 
+FROM orders_per_hour
+```
 
 ## Question Three
 ### Prompt
