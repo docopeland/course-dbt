@@ -6,7 +6,7 @@ How many users do we have?
 ### Answer
 130 users
 ### Query
-```
+```SQL
 SELECT COUNT(DISTINCT user_id) 
 FROM dev_db.dbt_doc22.stg_users
 ```
@@ -17,7 +17,7 @@ On average, how many orders do we receive per hour?
 ### Answer
 7.5 orders per hour
 ### Query
-```
+```SQL
 WITH orders_per_hour AS(
     SELECT date_trunc('hour', CREATED_AT) as hourly,
         COUNT(order_id) AS orders
@@ -35,7 +35,7 @@ On average, how long does an order take from being placed to being delivered?
 ### Answer
 3.9 days or 93.4 hours
 ### Query
-```
+```SQL
 WITH time_for_delivery AS(
     SELECT datediff('hour', created_at, delivered_at) as hourly_length,
         datediff('day', created_at, delivered_at) as daily_length
@@ -55,7 +55,7 @@ One purchase - 25 users
 Two purchases - 28 users  
 Three+ purchases - 71 users  
 ### Query
-```
+```SQL
 WITH user_orders AS (
     SELECT user_id,
         case
@@ -79,7 +79,7 @@ On average, how many unique sessions do we have per hour?
 ### Answer
 16.3 sessions per hour
 ### Query
-```
+```SQL
 WITH sessions AS (
     SELECT
         COUNT(DISTINCT session_id) as num_sessions,
