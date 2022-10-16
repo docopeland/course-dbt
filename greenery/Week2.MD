@@ -1,7 +1,6 @@
 # Week 1 Project Questions. 
 
-# Part One - Models
-## Question One
+## Part One - Models
 ### Prompt
 What is our user repeat rate?
 Repeat Rate = Users who purchased 2 or more times / users who purchased
@@ -22,6 +21,9 @@ select sum(case when num_orders > 1 then 1 else 0 end) as repeat_orderers,
 from user_orders
 ```
 
+### Prompt
+Mart Orders
+
 ## Question Two
 ### Prompt
 
@@ -31,22 +33,6 @@ from user_orders
 
 
 ## Question Three
-### Prompt
-
-### Answer
-
-### Query
-
-
-# Question Four
-### Prompt
-
-### Answer
- 
-### Query
-
-
-# Question Five
 ### Prompt
 
 ### Answer
