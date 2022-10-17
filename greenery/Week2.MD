@@ -25,17 +25,23 @@ from user_orders
 Mart Orders
 DAG GOES HERE
 
-## Question Two
+## Question Two - Tests
 ### Prompt
-
+What assumptions are you making about each model? Did you find any “bad” data as you added and ran tests on your models? How did you go about either cleaning the data in the dbt model or adjusting your assumptions/tests?
 ### Answer
+I started with the assumption that there would be no null data, that all values that I aggregated (with sum, average, or count) would have positive values, and that all inventory, price, costs, etc. would have positive values. The null data assumption caused a lot of my tests to fail. In some cases, it made sense that there would be null values (if an order had no promo code the promo id would be null). In other cases, the nulls were because when I aggregated using sum and/or average, I did not account for the fact some of the values coming in would null. In those cases, I added cases statements that if the value was null to add 0. It would make sense to run all of the tests on a daily basis. If possible, I would schedule daily tests that would let us know if the tests fail. 
 
-### Query
-
-
-## Question Three
+## Question Three - dbt Snapshots
 ### Prompt
-
+Which orders changed from week 1 to week 2? 
 ### Answer
-
+There was three orders created:
+- 939767ac-357a-4bec-91f8-a7b25edd46c9
+- 914b8929-e04a-40f8-86ee-357f2be3a2a2
+- 05202733-0e17-4726-97c2-0520c024ab85
 ### Query
+```SQL
+select *
+from dev_db.dbt_doc22.orders_snapshot
+having dbt_updated_at > cast('2022-10-09' as datetime)
+```
