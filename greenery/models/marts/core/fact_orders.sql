@@ -15,7 +15,7 @@ select orders.order_id,
     count(order_items.product_id) as total_products,
     sum(order_items.quantity) as total_quantity,
     count(promos.promo_id) as total_promos,
-    sum(promos.discount) as total_discount,
+    sum(case when promos.discount is not null then promos.discount else 0 end) as total_discount,
     count(events.event_id) as total_events
 from {{ref('stg_orders')}} orders
 left join {{ref('stg_order_items')}} order_items on orders.order_id = order_items.order_id

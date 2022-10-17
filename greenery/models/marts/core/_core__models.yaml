@@ -83,3 +83,49 @@ models:
           - not_null
   - name: fact_orders
     description: Table with order, event, and promo information for each order
+    columns:
+      - name: order_id
+        tests: 
+          - not_null
+      - name: promo_id
+      - name: user_id
+        tests: 
+          - not_null
+      - name: created_at
+        tests: 
+          - not_null
+      - name: order_cost
+        tests: 
+          - not_null
+          - positive_values
+      - name: shipping_cost
+        tests: 
+          - not_null
+          - positive_values
+      - name: order_total
+        tests: 
+          - not_null
+          - positive_values
+      - name: hourly_delivery_length
+        tests: 
+          - positive_values
+      - name: total_products
+        tests: 
+          - not_null
+          - positive_values
+      - name: total_quantity
+        tests: 
+          - not_null
+          - positive_values
+      - name: total_promos
+        tests: 
+          - not_null
+          - positive_values
+      - name: total_discount
+        tests: 
+          - not_null
+          - positive_values
+      - name: total_events
+        tests: 
+          - not_null
+          - positive_values
