@@ -4,6 +4,22 @@ version: 2
 models:
   - name: stg_addresses
     description: Information on addresses
+    columns:
+      - name: address_id
+        tests: 
+          - not_null
+      - name: address
+        tests: 
+          - not_null
+      - name: zipcode
+        tests: 
+          - not_null
+      - name: state
+        tests: 
+          - not_null
+      - name: country
+        tests: 
+          - not_null
   - name: stg_events
     description: Information on events
   - name: stg_order_items
