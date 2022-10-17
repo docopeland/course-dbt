@@ -110,5 +110,16 @@ models:
           - positive_values
   - name: stg_promos
     description: Information on promotions
+    columns:
+      - name: promo_id
+        tests:
+          - not_null
+      - name: discount
+        tests:
+          - not_null
+          - positive_values
+      - name: status
+        tests:
+          - not_null
   - name: stg_users
     description: Information on users
