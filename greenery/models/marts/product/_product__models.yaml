@@ -1,0 +1,19 @@
+version: 2
+
+#adding product tables
+models:
+  - name: fact_sessions
+    description: All the order and product info for each session
+    columns:
+    - name: total_events
+      tests:
+        - positive_values
+    - name: completed_orders
+      tests:
+        - positive_values
+    - name: shipped_orders
+      tests:
+        - positive_values
+    - name: products_ordered
+      tests:
+        - positive_values
