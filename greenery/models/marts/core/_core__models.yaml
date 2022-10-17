@@ -1,0 +1,10 @@
+version: 2
+
+# adding dimension and fact tables
+models:
+  - name: dim_products
+    description: Table with promo, order, and event information for each product
+  - name: dim_users
+    description: Table with user info and addresses for each user
+  - name: fact_orders
+    description: Table with order, event, and promo information for each order

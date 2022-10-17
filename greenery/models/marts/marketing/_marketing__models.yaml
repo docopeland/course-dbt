@@ -1,8 +1,6 @@
 version: 2
 
-# adding intermediate and dimension tables
+# adding intermediate table
 models:
-  - name: dim_users
-    description: Table with information about users and their addresses
   - name: int_users_orders
     description: Table aggregating orders and promos by user
