@@ -9,7 +9,6 @@ select
     users.email,
     users.created_at,
     users.updated_at,
-    addresses.address,
     addresses.zipcode,
     addresses.state,
     addresses.country

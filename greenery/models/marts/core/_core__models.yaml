@@ -61,5 +61,25 @@ models:
           - positive_values
   - name: dim_users
     description: Table with user info and addresses for each user
+    columns:
+      - name: user_id
+      - name: email
+        tests: 
+          - not_null
+      - name: created_at
+        tests: 
+          - not_null
+      - name: updated_at
+        tests: 
+          - not_null
+      - name: zipcode
+        tests: 
+          - not_null
+      - name: state
+        tests: 
+          - not_null
+      - name: country
+        tests: 
+          - not_null
   - name: fact_orders
     description: Table with order, event, and promo information for each order
