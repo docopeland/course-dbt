@@ -6,7 +6,7 @@
 
 select 
     products.product_id,
-    products.name,
+    products.name as name,
     products.price,
     products.inventory,
     sum(order_items.quantity) as total_quantity,
