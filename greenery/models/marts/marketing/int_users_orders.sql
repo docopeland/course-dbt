@@ -13,7 +13,7 @@ select
     sum(orders.shipping_cost) as total_shipping_cost,
     sum(orders.order_total) as total_order_total,
     sum(case when orders.promo_id is not null then 1 else 0 end) as total_promos,
-    sum(promos.discount) as promo_discounts,
+    sum(case when promos.discount is not null then promos.discount else 0 end) as promo_discounts,
     max(orders.delivered_at) as last_delivery,
     min(orders.created_at) as first_order,
     max(orders.created_at) as last_order,

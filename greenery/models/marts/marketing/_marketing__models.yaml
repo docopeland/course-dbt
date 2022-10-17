@@ -4,3 +4,46 @@ version: 2
 models:
   - name: int_users_orders
     description: Table aggregating orders and promos by user
+    columns: 
+      - name: user_id
+      - name: state
+        tests:
+          - not_null
+      - name: country
+        tests:
+          - not_null
+      - name: total_orders
+        tests:
+          - positive_values
+          - not_null
+      - name: total_order_cost
+        tests:
+          - positive_values
+          - not_null
+      - name: total_shipping_cost
+        tests:
+          - positive_values
+          - not_null
+      - name: total_order_total
+        tests:
+          - positive_values
+          - not_null
+      - name: total_promos
+        tests:
+          - positive_values
+          - not_null
+      - name: promo_discounts
+        tests:
+          - positive_values
+          - not_null
+      - name: last_delivery
+      - name: first_order
+        tests:
+          - not_null
+      - name: last_order
+        tests:
+          - not_null
+      - name: total_events
+        tests:
+          - positive_values
+          - not_null
