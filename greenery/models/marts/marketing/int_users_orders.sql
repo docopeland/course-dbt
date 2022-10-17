@@ -6,6 +6,9 @@
 
 select
     orders.user_id as user_id,
+    addresses.zipcode,
+    addresses.state,
+    addresses.country,
     count(orders.order_id) as total_orders,
     sum(orders.order_cost) as total_order_cost,
     sum(orders.shipping_cost) as total_shipping_cost,
@@ -19,4 +22,8 @@ select
 from {{ref('stg_orders')}} as orders
 left join {{ref('stg_promos')}} as promos on orders.promo_id = promos.promo_id
 left join {{ref('stg_events')}} as events on orders.user_id = events.user_id
-group by orders.user_id 
+left join {{ref('stg_addresses')}} as addresses on users.address_id = addresses.address_id
+group by orders.user_id,
+    addresses.zipcode,
+    addresses.state,
+    addresses.country
