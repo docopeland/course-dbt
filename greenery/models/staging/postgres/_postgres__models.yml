@@ -58,6 +58,39 @@ models:
           - positive_values
   - name: stg_orders
     description: Information on orders
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+      - name: promo_id
+      - name: user_id
+        tests:
+          - not_null
+      - name: address_id
+        tests:
+          - not_null
+      - name: created_at
+        tests:
+          - not_null
+      - name: order_cost
+        tests:
+          - not_null
+          - positive_values
+      - name: shipping_cost
+        tests:
+          - not_null
+          - positive_values
+      - name: order_total
+        tests:
+          - not_null
+          - positive_values
+      - name: tracking_id
+      - name: shipping_service
+      - name: estimated_delivery_at
+      - name: delivered_at
+      - name: status
+        tests:
+          - not_null
   - name: stg_products
     description: Information on productions
   - name: stg_promos
