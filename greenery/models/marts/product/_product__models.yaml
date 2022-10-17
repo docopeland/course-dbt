@@ -8,12 +8,16 @@ models:
     - name: total_events
       tests:
         - positive_values
+        - not_null
     - name: completed_orders
       tests:
         - positive_values
+        - not_null
     - name: shipped_orders
       tests:
         - positive_values
+        - not_null
     - name: products_ordered
       tests:
         - positive_values
+        - not_null
