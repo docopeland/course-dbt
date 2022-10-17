@@ -123,3 +123,28 @@ models:
           - not_null
   - name: stg_users
     description: Information on users
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+      - name: first_name
+        tests:
+          - not_null
+      - name: last_name
+        tests:
+          - not_null
+      - name: email
+        tests:
+          - not_null
+      - name: phone_number
+        tests:
+          - not_null
+      - name: created_at
+        tests:
+          - not_null
+      - name: updated_at
+        tests:
+          - not_null
+      - name: address_id
+        tests:
+          - not_null
