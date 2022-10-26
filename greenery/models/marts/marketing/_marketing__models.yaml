@@ -6,6 +6,8 @@ models:
     description: Table aggregating orders and promos by user
     columns: 
       - name: user_id
+        tests:
+          - dbt_expectations.expect_column_values_to_be_unique
       - name: state
         tests:
           - not_null

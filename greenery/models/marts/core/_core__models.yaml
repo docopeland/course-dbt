@@ -9,6 +9,7 @@ models:
       - name: name
         tests: 
           - not_null
+          - dbt_expectations.expect_column_values_to_be_unique
       - name: price
         tests: 
           - not_null
@@ -63,6 +64,8 @@ models:
     description: Table with user info and addresses for each user
     columns:
       - name: user_id
+        tests:
+          - dbt_expectations.expect_column_values_to_be_unique
       - name: email
         tests: 
           - not_null
@@ -87,6 +90,7 @@ models:
       - name: order_id
         tests: 
           - not_null
+          - dbt_expectations.expect_column_values_to_be_unique
       - name: promo_id
       - name: user_id
         tests: 

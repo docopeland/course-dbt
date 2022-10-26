@@ -37,6 +37,8 @@ Added a post hook to my dbt_project.yml file.
 ## Question 4
 ### Prompt
 Install a package and apply one or more of the macros to your project
+### Answer
+I installed calogica/dbt_expectations. I used the expect_column_values_to_be_unique as a test for some of my columns.
 
 ## Question 5
 ### Prompt
