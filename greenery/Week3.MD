@@ -31,6 +31,8 @@ I created two macros: sum_non_null and count_non_null
 ## Question 3
 ### Prompt
 Add a post hook to your project to apply grants to the role “reporting”. 
+### Answer
+Added a post hook to my dbt_project.yml file. 
 
 ## Question 4
 ### Prompt
