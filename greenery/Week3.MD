@@ -43,6 +43,8 @@ I installed calogica/dbt_expectations. I used the expect_column_values_to_be_uni
 ## Question 5
 ### Prompt
 Show (using dbt docs and the model DAGs) how you have simplified or improved a DAG using macros and/or dbt packages.
+### Answer
+My DAG has not changed
 
 ## Question 6
 ### Prompt
