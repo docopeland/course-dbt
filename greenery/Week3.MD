@@ -49,3 +49,17 @@ My DAG has not changed
 ## Question 6
 ### Prompt
 Which orders changed from week 2 to week 3? 
+### Answer
+There are five orders that have changed: 
+e24985f3-2fb3-456e-a1aa-aaf88f490d70
+38c516e8-b23a-493a-8a5c-bf7b2b9ea995
+aafb9fbd-56e1-4dcc-b6b2-a3fd91381bb6
+8385cfcd-2b3f-443a-a676-9756f7eb5404
+d1020671-7cdf-493c-b008-c48535415611
+5741e351-3124-4de7-9dff-01a448e7dfd4
+### Query
+```SQL
+select *
+from dev_db.dbt_doc22.orders_snapshot
+having dbt_updated_at > cast('2022-10-18' as datetime)
+```
