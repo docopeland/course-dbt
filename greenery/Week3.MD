@@ -25,6 +25,8 @@ from dev_db.dbt_doc22.dim_products
 ## Question 2
 ### Prompt
 Create a macro to simplify part of a model(s). 
+### Answer
+I created two macros: sum_non_null and count_non_null
 
 ## Question 3
 ### Prompt
