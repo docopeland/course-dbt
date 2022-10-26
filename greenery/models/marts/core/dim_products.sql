@@ -19,7 +19,8 @@ select
     events.page_url,
     min(events.created_at) as created_at,
     count(distinct events.session_id) as total_sessions,
-    count(distinct events.session_id)/count(distinct events.user_id) as avg_sessions_per_user
+    count(distinct events.session_id)/count(distinct events.user_id) as avg_sessions_per_user,
+    total_orders/total_sessions * 100 as product_conversion
 from {{ref('stg_products')}} products 
 left join {{ref('stg_order_items')}} order_items on products.product_id = order_items.product_id
 left join {{ref('stg_events')}} events on products.product_id = events.product_id
